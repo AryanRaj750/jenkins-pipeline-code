@@ -1,12 +1,20 @@
 pipeline {
- agent none
+ agent any
   stages {
+     stage("build'){
+        steps{
+           sh echo "this is build"
+       }
+     }
     stage("test"){
-      
-      sh echo "hello aryan"
+       steps{
+          sh echo "hello aryan, this is test"
+       }
     }
     stage("deploy"){
-      sh date
+       steps{
+          sh echo "this is deployments"
+       }
     }  
   } 
 }
